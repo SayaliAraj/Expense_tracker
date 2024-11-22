@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Dashboard</h1>
+<ul>
+    {% for expense in expenses %}
+    <li>{{ expense.category }}: ${{ expense.amount }} ({{ expense.date }})</li>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('logout') }}">Logout</a>
+{% endblock %}
